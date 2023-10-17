@@ -12,7 +12,7 @@
             background-color: blueviolet;
             color: white;
             padding: 1rem;
-            width: 120px;
+            width: 220px;
             text-align: center;
             margin: 1rem auto;
             border-radius: 2rem;
@@ -42,6 +42,29 @@
         <li>illustrator</li>
         <li>premiere</li>
     </ol>
+    <button id="click">click</button>
+    <script>
+        let state=confirm("ادامه بدیم؟")
+        let i=0
+        let obj={}
+        function myfunc(){
+        while(state==true){
+            let name=prompt("نام")
+            let family=prompt("نام خانوادگی")
+            obj[i]={
+                fname:name,
+                lname:family
+            }
+            state=confirm("ادامه بدیم؟")
+            i++;
+
+        }
+    }
+   let cli= document.getElementById("click")
+   cli=document.addEventListener("click")
+    myfunc();
+    console.log(obj)
+    </script>
 </body>
 
 </html>
