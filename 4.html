@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #name {
+            background-color: aqua;
+            border-radius: 1rem ;
+            text-align: center;
+        }
+        .t1{
+            background-color: rgb(6, 75, 75);
+            border-radius: 1rem ;
+            text-align: center;
+        }
+        #btn1 {
+            background-color: blue;
+            width: 500px;
+            height: 500px;
+            border-radius: 1rem;
+
+        }
+        #btn1:hover{
+
+        }
+        #text{
+            width: 50px;
+            height: 50px;
+        }
+
+
+    </style>
+</head>
+<body>
+   <header id="name"><p>امیر شریفی</p></header>
+    <section class="t1"><p>تخصص ها<br>پریمیر<br>فوتوشاپ</p></section>
+    <section>
+        <article id="btn1">
+            <input id="btn4" type="button" value=" click">
+            <input id="text" type="text" value="green" >
+        </article>
+        
+    </section>
+    <script>
+        document.getElementById("btn4").addEventListener("click",function(){
+            document.getElementById("btn1").style.backgroundColor=
+            document.getElementById("text").value
+        })
+
+    </script>
+</body>
+</html>
