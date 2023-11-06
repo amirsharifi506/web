@@ -10,25 +10,47 @@
     </style>
 </head>
 <body>
-    
-    <input id="btnok"type="button" value="click">
-    <section id="=inputs">
+   <section>
+    <div id="form">
+        <button id="add"> add </button>
+        <section id="inputs">
 
-    </section>
-    <input id="btnlook" type="button" value="look">
+        </section>
+        <button id="log">show log</button>
+    </div>
+   </section>
+   <script>
+       const inputs=(i)=>{
+           return 'name :<input type="text" id="name -$(i)"> family: <input type="text" id="family" -$(i)>'
+       }
+       let i=0;
+       let obj={}
+       let btn_add = document.getElementById('add')
+       let btn_log=document.getElementById('add')
+       let btn_form=document.getElementById('form')
+       let section_inputs=document.getElementById('inputs')
+       function add_inputs(){
+           section_inputs.innerHtml+= form_inputs(i)
+           i++
+       }
+       function save_inputs_in_obj(){
+           for (let j=0;j<i;j++) {
+               obj[j] = {
+                   "name": document.getElementById('name-' + j).value,
+                   "family": document.getElementById('family-' + j).value,
+                   "check": document.getElementById('check-' + j).value ? 'no' : 'off'
+               }
+           }
+       }
+       function process() {
+           save_inputs_in_obj();
+           console.table(obj)
+       }
+       btn_add.addEventlist('click',add_inputs)
+       btn_log.addEventlist('click',process)
+   </script>
 
-<script>
-    let clickok=document.getElementById("btnok")
-    clickok.addEventListener("click",function add(){
- 'name :<input type="text" id="name">family :<input type="text" id="family">'
-        }
-    })
-    let lok=document.getElementById("btnlook")
-    lok=document.addEventListener("click",function show(){
-
-    })
 
 
-</script>
 </body>
 </html>
