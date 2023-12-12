@@ -158,6 +158,18 @@ function fileControllerB(request, response) {
     })
     console.log('fileController 3')
 }
+function inserttofile(request,response,data){
+    console.log("inside inserttofile",data)
+    fs.writeFile('massage.txt',data,(error,data) =>{
+        if(error){
+        write(response, 'error file', 'text');
+    }
+    else{
+        write(response, data, extention); 
+    }
+    console.log("saved")
+})
+}
 
 let routes = {
     x: funcx,
@@ -169,7 +181,9 @@ let routes = {
     page2b: page2controllerB,
     page2c: page2controllerC,
     page2d: page2controllerD,
-    raetfile: fileControllerB
+    flie: fileControllerB,
+    inserttofile:inserttofile,
+    getfile:getfile,
 }
 
 function requestHandler(request, response) {
@@ -187,9 +201,9 @@ function requestHandler(request, response) {
             data+=chunk;
         })
         request.on('end',function(){
-            console.log('data:   ',data)
+            console.log("data:   ",data)
             try{
-                routes[firstPart](request, response);
+                routes[firstPart](request, response,data);
             }
             catch(error){
                 console.log('CATCHED ERROR', error);
